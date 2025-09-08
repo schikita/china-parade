@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#3B82F6" />
+    <title>Репортаж про адаптации в общежитиях</title>
+    <meta name="description"
+        content="Одностраничный лонгрид с анимациями и плавной навигацией: адаптация первокурсников в общежитиях." />
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/galerei.css">
+    <link rel="stylesheet" href="./assets/styles/slider.css">
+    <link rel="stylesheet" href="./assets/styles/grid-img.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+</head>
+
+<body>
+    <!-- Навигация -->
+    <nav id="navbar" role="navigation">
+        <div class="nav-container">
+            <a href="https://www.sb.by/" class="logo" target="_blank" rel="noopener noreferrer">
+                <img src="./assets/img/logo.png" alt="СБ лого" />
+                <span class="logo-text">SB.BY</span>
+            </a>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#context">Контекст</a></li>
+                <li><a href="#history">История</a></li>
+                <li><a href="#parade">Парад</a></li>
+                <li><a href="#memory">Память</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+            </ul>
+
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-controls="navLinks" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="tile">
+            <!-- текущий и следующий кадр -->
+            <img class="tile__img tile__img--first" src="./assets/img/hero/hero-1.jpg" alt="Военный парад в Китае" />
+            <img class="tile__img tile__img--last" src="./assets/img/hero/hero-2.jpg" alt="Следующее изображение" />
+
+            <div class="title">
+                <div class="title__container">
+                    <!-- текущий и следующий заголовок -->
+                    <div class="title__text title__text--first">
+                        Вторая мировая война<br />завершилась в Китае
+                    </div>
+                    <div class="title__text title__text--last">
+                        80 лет<br />Великой Победы
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="next-tile">
+            <div class="next-tile__details">
+                <span class="next-tile__heading">Далее</span>
+                <div class="next-tile__title">
+                    <!-- заголовок следующего и через один -->
+                    <span class="next-tile__title__text next-tile__title__text--first">
+                        80 лет<br />Великой Победы
+                    </span>
+                    <span class="next-tile__title__text next-tile__title__text--last">
+                        История с<br />географией
+                    </span>
+                </div>
+                <svg class="next-tile__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 42.6 20.1">
+                    <path d="M0,8.2h35.5l-5.6-5.6L32.5,0l10.1,10.1L32.5,20.1l-2.6-2.6l5.6-5.6H0V8.2z" />
+                </svg>
+            </div>
+
+            <div class="next-tile__preview">
+                <!-- превью следующего и через один -->
+                <img class="next-tile__preview__img next-tile__preview__img--first" src="./assets/img/hero/hero-2.jpg"
+                    alt="Превью следующего кадра" />
+                <img class="next-tile__preview__img next-tile__preview__img--last" src="./assets/img/hero/hero-3.jpg"
+                    alt="Превью кадра после следующего" />
+            </div>
+        </button>
+    </section>
+
+
+    <!-- Контекст -->
+    <section id="context" class="section">
+        <div class="container">
+            <div class="kicker reveal">СПЕЦПРОЕКТ «СБ»</div>
+            <div class="h2 reveal">Торжества по случаю 80-летия завершения Второй мировой войны</div>
+            <p class="muted reveal" style="max-width:70ch;">
+                Рассказываем о том, каким был День Победы в Пекине и почему для всего мира важна дата разгрома
+                милитаристской Японии
+            </p>
+
+            <div class="grid-3">
+                <div class="card reveal">
+                    <strong>2 сентября 1945 года</strong><br>
+                    <span class="muted">На борту линкора «Миссури» был подписан акт о безоговорочной капитуляции
+                        Японии</span>
+                </div>
+                <div class="card reveal">
+                    <strong>3 сентября в КНР</strong><br>
+                    <span class="muted">День победы в Войне сопротивления китайского народа японским захватчикам</span>
+                </div>
+                <div class="card reveal">
+                    <strong>35 миллионов</strong><br>
+                    <span class="muted">Потери Китая в войне против японских милитаристов по китайским источникам</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- История с географией - Параллакс -->
+    <section id="history" class="parallax-section">
+        <div class="parallax-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?q=80&w=1920&auto=format&fit=crop');">
+        </div>
+        <div class="parallax-content">
+            <div class="container">
+                <div class="kicker reveal">история с географией</div>
+                <div class="h2 reveal">Война началась в 1931</div>
+
+                <div class="columns">
+                    <div class="column reveal">
+                        <h3>Мукденский инцидент</h3>
+                        <p>Подрыв железной дороги вблизи современного города Шэньян (ранее – Мукден) стал поводом для
+                            наступления Квантунской армии на китайские позиции в сентябре 1931 года.</p>
+                        <p>Это привело к оккупации Японией Маньчжурии и фактически стало началом японо-китайской войны.
+                        </p>
+                    </div>
+
+                    <div class="column reveal">
+                        <h3>7 июля 1937 года</h3>
+                        <p>У города-крепости Ванпин произошла стычка между солдатами японской Гарнизонной армии в Китае
+                            и ротой китайских войск, охранявшей мост Лугоу.</p>
+                        <p>Отсюда началась полномасштабная фаза войны, которая продлится до сентября 1945 года.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Слайдер парада -->
+    <section class="section">
+        <div class="container">
+            <div class="kicker reveal">моменты истории</div>
+            <div class="h2 reveal">Ключевые кадры</div>
+        </div>
+
+        <div class="parade-slider swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <figure class="ps-card">
+                        <img src="./assets/img/key-1.jpg" alt="Военный парад" />
+                        <figcaption>
+                            <span class="ps-kicker">Парад в Пекине</span>
+                            <h3>Торжественное открытие</h3>
+                            <p>Председатель КНР Си Цзиньпин в открытом автомобиле объезжает парадные расчеты</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="swiper-slide">
+                    <figure class="ps-card">
+                        <img src="./assets/img/hero/hero-4.jpeg" alt="Военная техника" />
+                        <figcaption>
+                            <span class="ps-kicker">Парад в Пекине</span>
+                            <h3>Современное вооружение</h3>
+                            <p>Демонстрация новейших ракетных комплексов и военной техники</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="swiper-slide">
+                    <figure class="ps-card">
+                        <img src="./assets/img/hero/hero-1.jpg" alt="Военнослужащие" />
+                        <figcaption>
+                            <span class="ps-kicker">Парад в Пекине</span>
+                            <h3>Парадные расчеты</h3>
+                            <p>Военнослужащие различных родов войск в торжественном строю</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <div class="swiper-slide">
+                    <figure class="ps-card">
+                        <img src="./assets/img/key-6.jpg" alt="Финал парада" />
+                        <figcaption>
+                            <span class="ps-kicker">Парад в Пекине</span>
+                            <h3>Символ мира</h3>
+                            <p>80 тысяч голубей взмыли в небо как символ мира после демонстрации силы</p>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="swiper-slide">
+                    <figure class="ps-card">
+                        <img src="./assets/img/hero/hero-7.jpg"
+                            alt="Пекин, площадь Тяньаньмэнь: колонна ракетных комплексов на параде; зрители снимают на телефоны"
+                            loading="lazy" 
+                        />
+                        <figcaption>
+                            <span class="ps-kicker">Парад в Пекине</span>
+                            <h3>Пекин, площадь Тяньаньмэнь</h3>
+                            <p> колонна ракетных комплексов на параде; зрители снимают на телефоны.</p>
+                        </figcaption>
+                    </figure>
+                </div>
+
+            </div>
+
+            <div class="ps-nav">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Что значит быть при параде - Параллакс -->
+    <section id="parade" class="parallax-section">
+        <div class="parallax-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1533158326339-7f3cf240435d?q=80&w=1920&auto=format&fit=crop');">
+        </div>
+        <div class="parallax-content">
+            <div class="container">
+                <div class="kicker reveal">репортаж</div>
+                <div class="h2 reveal">Что значит быть при параде</div>
+
+                <div class="columns">
+                    <div class="column reveal">
+                        <h3>Беспрецедентная безопасность</h3>
+                        <p>Учитывая участие десятков тысяч людей и лидеров зарубежных государств, безопасность на параде
+                            была беспрецедентной. Само мероприятие намечено на 9:30 утра, но выдвижение колонн автобусов
+                            к центру Пекина начинается с ночи.</p>
+                        <p>В 2:30 утра 3 сентября журналисты выдвигаются из гостиницы в Медиа-центр для получения
+                            пропусков и мест на трибунах.</p>
+                    </div>
+
+                    <div class="column reveal">
+                        <h3>Строгий контроль техники</h3>
+                        <p>Проносить с собой можно только мобильные телефоны — даже фотоаппараты и камеры GoPro не
+                            допускаются, их необходимо было регистрировать заранее.</p>
+                        <p>Трибуны находятся на значительном расстоянии от площади, снимать мобильным телефоном
+                            практически невозможно.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Память о войне -->
+    <section id="memory" class="parallax-section">
+        <div class="parallax-bg"
+            style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1920&auto=format&fit=crop');">
+        </div>
+        <div class="parallax-content">
+            <div class="container">
+                <div class="kicker reveal">нанкинская резня</div>
+                <div class="h2 reveal">Побеждает правда</div>
+
+                <div class="columns">
+                    <div class="column reveal">
+                        <h3>Нанкин — город памяти</h3>
+                        <p>За шесть недель 1937 года, которые японцы владели городом, были убиты 300 000 человек. Эти
+                            полтора месяца вошли в историю под названием Нанкинской резни.</p>
+                        <p>Глядя на свидетельства зверств захватчиков в нанкинском Мемориальном музее, легко понять —
+                            насколько схож фашизм в разных частях мира.</p>
+                    </div>
+
+                    <div class="column reveal">
+                        <h3>Историческая правда</h3>
+                        <p>«Нам следует пропагандировать правильный взгляд на историю Второй мировой войны. Как Китай,
+                            так и Советский Союз внесли огромный вклад в Победу», — отмечает научный сотрудник
+                            Мемориального комплекса Чжан Госун.</p>
+                        <p>Побеждает правда, побеждает мир, побеждает народ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Военная техника на параде -->
+    <section class="section">
+        <div class="container">
+            <div class="kicker reveal">современное вооружение</div>
+            <div class="h2 reveal">Демонстрация военной мощи</div>
+
+            <div class="grid-3">
+                <div class="card reveal">
+                    <strong>DF-5C</strong><br>
+                    <span class="muted">Межконтинентальная стратегическая ядерная ракета с дальностью полета более 20
+                        тыс. км</span>
+                </div>
+                <div class="card reveal">
+                    <strong>Гиперзвуковые ракеты</strong><br>
+                    <span class="muted">YJ-21, DF-17 и DF-26D — новейшие разработки китайского ВПК</span>
+                </div>
+                <div class="card reveal">
+                    <strong>80 тысяч голубей</strong><br>
+                    <span class="muted">В финале парада в небо взмыли голуби и разноцветные шары как символ мира</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Галерея проектов -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="kicker reveal">другие проекты</div>
+            <div class="h2 reveal">Спецпроекты СБ</div>
+
+            <div class="grid-3">
+                <a href="https://www.sb.by/sp/school/" class="card reveal"
+                    style="text-decoration: none; display: block;">
+                    <img src="./assets/img/scool.jpg"
+                        alt="Школы"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 16px;" />
+                    <strong>Новые школы Беларуси</strong><br>
+                    <span class="muted">Чем удивляют современные образовательные учреждения</span>
+                </a>
+
+                <a href="https://www.sb.by/sp/voencore2025/index.html" class="card reveal"
+                    style="text-decoration: none; display: block;">
+                    <img src="./assets/img/voencore.jpg"
+                        alt="Военкор"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 16px;" />
+                    <strong>«Военкор-2025»</strong><br>
+                    <span class="muted">Репортаж с места событий глазами журналиста</span>
+                </a>
+
+                <a href="https://www.sb.by/sp/bear-hunting/index.html" class="card reveal"
+                    style="text-decoration: none; display: block;">
+                    <img src="./assets/img/hunting.png"
+                        alt="Охота"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 16px;" />
+                    <strong>Охота на медведя</strong><br>
+                    <span class="muted">Как корреспондент СБ отправился на медведя</span>
+                </a>
+                 <a href="https://www.sb.by/sp/bear-hunting/index.html" class="card reveal"
+                    style="text-decoration: none; display: block;">
+                    <img src="./assets/img/PDD.jpg"
+                        alt="ПДД"
+                        style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 16px;" />
+                    <strong>Нововведения ПДД</strong><br>
+                    <span class="muted">Что нового нас ждет?</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <p style="font-size: 1.2rem; margin-bottom: 10px">
+                © <time id="y" datetime="2025">2025</time>
+                СБ. Беларусь сегодня | Военный парад в Китае
+            </p>
+            <p style="opacity: 0.7">80 лет Великой Победы</p>
+        </div>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="./assets/scripts/index.js" defer></script>
+</body>
+
+</html>

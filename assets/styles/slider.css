@@ -1,0 +1,50 @@
+/* ===== Parade Slider (scoped) ===== */
+.parade-slider{ width:min(1100px, 94vw); margin:10px auto 8px; }
+.parade-slider .swiper-wrapper{ align-items:stretch; }
+.parade-slider .swiper-slide{ width:auto; max-width:86vw; }
+
+.ps-card{
+  position:relative; overflow:hidden; border-radius:20px;
+  aspect-ratio: 3 / 4;  /* высота карточки */
+  background: #000; box-shadow: 0 20px 50px rgba(0,0,0,.35);
+}
+.ps-card img{ width:100%; height:100%; object-fit:cover; display:block; }
+.ps-card::after{ /* лёгкий виньет/градиент */
+  content:""; position:absolute; inset:0;
+  background: radial-gradient(80% 80% at 80% 20%, transparent 0 60%, rgba(0,0,0,.35) 100%),
+              linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,.55) 100%);
+}
+
+.ps-card figcaption{
+  position:absolute; left:18px; right:18px; bottom:18px; z-index:2;
+  backdrop-filter: blur(8px) saturate(130%);
+  background: rgba(17,24,39,.45);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius:16px; padding:14px 16px; color:#e5e7eb;
+}
+.ps-kicker{ font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#a5b4fc; font-weight:800; }
+.ps-card h3{ margin:4px 0 4px; font-size:clamp(18px,2.6vw,26px); font-weight:900; }
+.ps-card p{ margin:0; opacity:.9; }
+
+.parade-slider .ps-nav{ display:flex; align-items:center; justify-content:center; gap:10px; margin-top:12px; }
+.parade-slider .swiper-button-prev,
+.parade-slider .swiper-button-next{
+  position:static; width:42px; height:42px; border-radius:12px;
+  background: rgba(255,255,255,.08); color:#fff;
+  border:1px solid rgba(255,255,255,.12);
+}
+.parade-slider .swiper-button-prev:after,
+.parade-slider .swiper-button-next:after{ font-size:18px; }
+
+.parade-slider .swiper-pagination{ position:static; }
+.parade-slider .swiper-pagination-bullet{
+  background:#c7d2fe; opacity:.5; width:8px; height:8px; margin:0 4px !important;
+}
+.parade-slider .swiper-pagination-bullet-active{ opacity:1; background:#fff; }
+
+.parade-slider .swiper-slide{ max-width: 92vw; }
+
+@media (max-width: 640px){
+  .ps-card{ aspect-ratio: 3/4; }
+  .ps-card figcaption{ left:12px; right:12px; bottom:12px; }
+}
