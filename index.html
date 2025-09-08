@@ -7,8 +7,7 @@
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#3B82F6" />
     <title>Живой репортаж | Парад в Китае</title>
-    <meta name="description"
-        content="Парад в Китае" />
+    <meta name="description" content="Парад в Китае" />
 
 
     <link rel="stylesheet" href="./assets/styles/style.css">
@@ -298,21 +297,38 @@
             <div class="kicker reveal">современное вооружение</div>
             <div class="h2 reveal">Демонстрация военной мощи</div>
 
-            <div class="grid-3">
-                <div class="card reveal">
-                    <strong>DF-5C</strong><br>
-                    <span class="muted">Межконтинентальная стратегическая ядерная ракета с дальностью полета более 20
-                        тыс. км</span>
-                </div>
-                <div class="card reveal">
-                    <strong>Гиперзвуковые ракеты</strong><br>
-                    <span class="muted">YJ-21, DF-17 и DF-26D — новейшие разработки китайского ВПК</span>
-                </div>
-                <div class="card reveal">
-                    <strong>80 тысяч голубей</strong><br>
-                    <span class="muted">В финале парада в небо взмыли голуби и разноцветные шары как символ мира</span>
-                </div>
+            <!-- 1) DF-5C -->
+            <div class="card reveal" style="transition-delay:.05s">
+                <strong>DF-5C</strong><br />
+                <span class="muted">
+                    Тяжёлая межконтинентальная ракета шахтного базирования, модернизация семейства DF-5.
+                    Используется как элемент стратегического сдерживания: может нести разделяющиеся боевые блоки
+                    и запускаться из защищённых позиционных районов. На параде показывает «ядерный щит» и
+                    технологическую преемственность ракетных войск.
+                </span>
             </div>
+
+            <!-- 2) Гиперзвуковые ракеты -->
+            <div class="card reveal" style="transition-delay:.10s">
+                <strong>Гиперзвуковые комплексы</strong><br />
+                <span class="muted">
+                    YJ-21 (противокорабельный), DF-17 с планирующим гиперзвуковым блоком и DF-26D —
+                    новые системы, рассчитанные на поражение морских и наземных целей на больших дальностях.
+                    Манёвренный полёт на гиперзвуковых скоростях снижает время реагирования и усложняет перехват,
+                    а мобильные пусковые установки повышают живучесть и скрытность.
+                </span>
+            </div>
+
+            <!-- 3) Авиация на параде -->
+            <div class="card reveal" style="transition-delay:.15s">
+                <strong>Авиация на параде</strong><br />
+                <span class="muted">
+                    Пролёт строев ВВС НОАК: истребители J-20 и J-16, бомбардировщики H-6K, транспортники Y-20
+                    и танкеры YU-20. Демонстрация дозаправки в воздухе, плотных построений «клин» и «ромб»,
+                    а также синхронных манёвров над площадью Тяньаньмэнь — кульминация воздушной части шествия.
+                </span>
+            </div>
+
         </div>
     </section>
 
@@ -367,6 +383,18 @@
             <p style="opacity: 0.7">80 лет Великой Победы</p>
         </div>
     </footer>
+
+    <button id="toTop" class="to-top" aria-label="Наверх" title="Наверх">
+        <!-- прогресс-кольцо -->
+        <svg class="ring" viewBox="0 0 44 44" aria-hidden="true">
+            <circle class="bg" cx="22" cy="22" r="19" />
+            <circle class="fg" cx="22" cy="22" r="19" />
+        </svg>
+        <!-- стрелка -->
+        <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 5l-7 7h4v7h6v-7h4l-7-7z" />
+        </svg>
+    </button>
 
 
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>

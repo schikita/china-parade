@@ -559,3 +559,47 @@ footer {
 .swiper-button-prev {
   color: var(--gold);
 }
+
+
+.to-top{
+  position: fixed;
+  right: 18px; bottom: 18px;
+  width: 56px; height: 56px;
+  border: 0; border-radius: 16px;
+  background: radial-gradient(120% 120% at 20% 20%, rgba(255,255,255,.18), transparent 60%),
+              linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  display: grid; place-items: center;
+  cursor: pointer;
+  z-index: 1100;
+  opacity: 0; transform: translateY(8px) scale(.96);
+  pointer-events: none;
+  transition: opacity .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.to-top .arrow{ width: 22px; height: 22px; fill: currentColor; filter: drop-shadow(0 1px 2px rgba(0,0,0,.3)); }
+.to-top .ring{ position: absolute; inset: 0; }
+.to-top .ring .bg{
+  fill: none; stroke: rgba(255,255,255,.22); stroke-width: 3;
+}
+.to-top .ring .fg{
+  fill: none; stroke: #fff; stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 119;  /* 2πr = 2*π*19 ≈ 119 */
+  stroke-dashoffset: 119;
+  transform: rotate(-90deg); transform-origin: 50% 50%;
+  opacity: .9;
+}
+.to-top:hover{ transform: translateY(0) scale(1.02); box-shadow: 0 16px 36px rgba(0,0,0,.32); }
+.to-top:focus-visible{ outline: 3px solid rgba(255,255,255,.5); outline-offset: 2px; }
+
+/* показать кнопку */
+.to-top.show{ opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+
+/* не мешаемся поверх открытого мобильного меню */
+@media (max-width: 960px){
+  nav#navbar.open ~ .to-top{ opacity: 0; pointer-events: none; }
+}
+@media (prefers-reduced-motion: reduce){
+  .to-top{ transition: none; }
+}

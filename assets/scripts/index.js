@@ -240,3 +240,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const btn = document.getElementById('toTop');
+  if(!btn) return;
+
+  const fg = btn.querySelector('.fg');
+  const CIRC = 119; // длина окружности (stroke-dasharray)
+
+  const prm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: prm.matches ? 'auto' : 'smooth' });
+  };
+
+  const onScroll = () => {
+    const doc = document.documentElement;
+    const scrolled = (doc.scrollTop || document.body.scrollTop);
+    const max = (doc.scrollHeight - doc.clientHeight) || 1;
+    const p = Math.min(scrolled / max, 1);
+    // обновляем кольцо
+    if (fg) fg.style.strokeDashoffset = String(CIRC - CIRC * p);
+    // показываем кнопку после 300px
+    btn.classList.toggle('show', scrolled > 300);
+  };
+
+  onScroll();
+  document.addEventListener('scroll', onScroll, { passive: true });
+  btn.addEventListener('click', scrollToTop);
+});
