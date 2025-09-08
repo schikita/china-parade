@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   let activeIndex = 0;
+  const heroTitleEls   = document.querySelectorAll('.title__text');
   const nextButton = document.querySelector(".next-tile");
   const tileImagesEls = document.querySelectorAll(".tile__img");
   const titleEls = document.querySelectorAll(".title__text");

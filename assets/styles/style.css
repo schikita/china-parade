@@ -14,10 +14,6 @@
   --shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
 }
 
-@font-face {
-  font-family: "igra";
-  src: url("/assets/fonts/igrasans.ttf") format("truetype");
-}
 
 /* ===== Базовые стили ===== */
 * {
