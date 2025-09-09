@@ -330,3 +330,37 @@ footer{ padding:60px 20px; background: linear-gradient(135deg, var(--bg-1), var(
   100%{ transform: translateX(120%); }
 }
 .preloader--hide{ opacity:0; visibility:hidden; transform: scale(1.02); }
+
+
+/* Мобильные карточки: фото выше и шире */
+@media (max-width: 640px){
+  /* карточка пусть может занимать почти всю ширину вьюпорта */
+  .parade-slider .swiper-slide{
+    /* Swiper поставит ширину сам (slidesPerView≈1),
+       но уберём лишние внутренние отступы контейнера, если есть */
+    padding-inline: 0;
+  }
+
+  .ps-card{
+    width: min(92vw, 520px);
+    max-width: none;
+    border-radius: 18px;
+  }
+
+  .ps-card img{
+    /* было 250px — делаем заметно выше */
+    height: clamp(300px, 48vh, 460px);
+    object-fit: cover;
+  }
+
+  .ps-card figcaption{
+    padding: 16px;
+  }
+}
+
+/* Очень узкие телефоны — ещё немного высоты */
+@media (max-width: 420px){
+  .ps-card img{
+    height: clamp(320px, 54vh, 520px);
+  }
+}
