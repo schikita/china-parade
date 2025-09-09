@@ -1,0 +1,238 @@
+
+.clear-fix {
+	clear: both;
+}
+
+.masonry-container {
+	width: 80vw;
+	position: relative;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.panel {
+	position: relative;
+	display: inline-block;
+	width: calc((80vw - 60px)/3);
+	height: calc((80vw - 60px)/3);
+	margin-left: 20px;
+	margin-bottom: 20px;
+	cursor: pointer;
+	box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.3);
+	transition: all 0.2s ease-out;
+}
+
+.panel:hover {
+	box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.55);
+	transition: all 0.2s ease-out;
+}
+
+.panel:nth-child(11n+1) {
+	margin-left: 0;
+}
+
+.panel:nth-child(11n+4) {
+	margin-left: 0;
+	width: calc(((80vw - 20px)/3)*2);
+	height: calc((80vw - 60px)/3);
+}
+
+.panel:nth-child(11n+6) {
+	margin-left: 0;
+	float: left;
+	width: calc((80vw - 60px)/3);
+	height: calc(((80vw - 20px)/3)*2 - 8px);
+}
+
+.panel:nth-child(11n+6) > .panel-wrapper > .panel-img {
+	transform: translateX(-25%);
+}
+
+.panel:nth-child(11n+7) {
+	margin-left: 27px;
+	width: calc(((80vw - 20px)/3)*2);
+}
+
+.panel:nth-child(11n+8) {
+	margin-left: 27px;
+}
+
+.panel:nth-child(11n+9) {
+	float: none;
+}
+
+.panel:nth-child(11n+10) {
+	margin-left: 0;
+	width: calc((80vw - 30px)/2);
+}
+
+.panel:nth-child(11n+11) {
+	width: calc((80vw - 30px)/2);
+}
+
+
+.panel-wrapper {
+	position: relative;
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	overflow: hidden !important;
+}
+
+.panel-overlay {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	opacity: 0;
+	transition: all 0.3s ease-out;
+}
+
+.panel-overlay:hover {
+	opacity: 1;
+	transition: all 0.3s ease-out;
+}
+
+.panel-text {
+	position: absolute;
+	width: 80%;
+	height: 60px;
+	margin: 0 auto;
+	left: 25px;
+	bottom: 0;
+	z-index: 10;
+}
+
+.panel-title {
+	font-size: 1em;
+	font-weight: 300;
+	letter-spacing: 0;
+	color: #fff;
+}
+
+.panel-tags {
+	padding-top: 2px;
+}
+
+.tag-icon-img {
+	display: inline-block;
+	width: 10px;
+	height: auto;
+	transform: translateY(2px);
+}
+
+.tags-list {
+	font-size: 0.55em;
+	font-weight: 400;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #fff;
+}
+
+.panel-gradient {
+	position: absolute;
+	width: 100%;
+	height: 65%;
+	bottom: 0;
+	opacity: 0.65;
+	z-index: 5;
+}
+
+.panel-vingette {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	opacity: 0.5;
+}
+
+.panel-img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: block;
+	margin: 0 auto;
+	min-width: 100%;
+	height: 100%;
+}
+
+/* ----- Ховер-эффект: затемнение + появление текста + лёгкий зум ----- */
+.panel-overlay{
+  position:absolute; inset:0;
+  display:flex; align-items:flex-end;
+  padding:18px;
+  opacity:0; transition:opacity .35s ease;
+  z-index:2;
+}
+
+/* мягкое затемнение поверх фото */
+.panel-overlay::before{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(180deg, transparent 30%, rgba(0,0,0,.45) 70%, rgba(0,0,0,.75) 100%);
+  opacity:0; transition:opacity .35s ease;
+}
+
+/* текст появляется снизу */
+.panel-text{
+  position:relative; z-index:3;
+  transform: translateY(8px);
+  opacity:0;
+  transition: transform .35s ease, opacity .35s ease;
+}
+
+/* изображение чуть увеличивается */
+.panel-img{
+  object-fit: cover;
+  transition: transform .45s ease;
+}
+
+/* активные состояния: hover / фокус / имитация тапа (класс .is-zoom) */
+.panel:hover .panel-overlay,
+.panel:focus-within .panel-overlay,
+.panel.is-zoom .panel-overlay{ opacity:1; }
+
+.panel:hover .panel-overlay::before,
+.panel:focus-within .panel-overlay::before,
+.panel.is-zoom .panel-overlay::before{ opacity:1; }
+
+.panel:hover .panel-text,
+.panel:focus-within .panel-text,
+.panel.is-zoom .panel-text{ transform:none; opacity:1; }
+
+.panel:hover .panel-img,
+.panel:focus-within .panel-img,
+.panel.is-zoom .panel-img{ transform: scale(1.06); }
+
+/* если используешь старые png-градиенты, спрячем их — они не нужны */
+.panel-gradient, .panel-vingette{ display:none; }
+
+/* ----- Адаптив для мобильных ----- */
+/* планшет: 2 колонки равной высоты, без «ломаных» размеров */
+@media (max-width: 1024px){
+  .masonry-container{ width:92vw; }
+  .masonry-container .panel{
+    width: calc((92vw - 20px)/2) !important;
+    height: auto !important;
+    aspect-ratio: 4 / 3;
+    margin-left: 0 !important;
+    float: none;
+  }
+  /* сбросим хитрые nth-child — одна сетка для всех карточек */
+  .masonry-container .panel:nth-child(n){
+    width: calc((92vw - 20px)/2) !important;
+    height: auto !important;
+  }
+}
+
+/* телефон: 1 колонка, крупные карточки */
+@media (max-width: 600px){
+  .masonry-container{ width:92vw; }
+  .masonry-container .panel{
+    width: 100% !important;
+    aspect-ratio: 16 / 10;
+    margin-left: 0 !important;
+  }
+}

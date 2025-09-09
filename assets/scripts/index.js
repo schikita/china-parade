@@ -269,3 +269,15 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('scroll', onScroll, { passive: true });
   btn.addEventListener('click', scrollToTop);
 });
+
+// Имитация hover на тач-устройствах + доступность
+document.addEventListener('touchstart', (e) => {
+  const p = e.target.closest('.panel');
+  if (!p) return;
+  // убрать активность у остальных, чтобы не «залипало»
+  document.querySelectorAll('.panel.is-zoom').forEach(el => {
+    if (el !== p) el.classList.remove('is-zoom');
+  });
+  p.classList.toggle('is-zoom');
+}, { passive: true });
+
